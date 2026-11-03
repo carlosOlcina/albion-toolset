@@ -18,8 +18,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Scripts\" />
     <Folder Include="Entities\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Scripts\*.sql" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,13 @@
+using api.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+var connectionString = builder.Configuration.GetConnectionString("PostgresConnection")
+    ?? throw new InvalidOperationException("Falta la cadena de conexión 'PostgresConnection'.");
 
+DatabaseMigrator.Run(connectionString);
+
+builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 
 var app = builder.Build();
