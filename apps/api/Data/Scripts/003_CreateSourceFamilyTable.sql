@@ -4,7 +4,7 @@ CREATE TABLE item_families
     name          VARCHAR(50) NOT NULL UNIQUE,
     bonus_city_id UUID        NOT NULL
         REFERENCES cities (id) ON DELETE RESTRICT,
-    category_id UUID NOT NULL REFERENCES category(id),
+    category_id UUID NOT NULL REFERENCES categories(id),
     created_at    TIMESTAMPTZ      DEFAULT now(),
     updated_at    TIMESTAMPTZ      DEFAULT now()
 );

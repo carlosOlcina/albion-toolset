@@ -1,4 +1,4 @@
-CREATE TYPE continents AS ENUM ('Royal', 'Outlands', 'Mists')
+CREATE TYPE continents AS ENUM ('Royal', 'Outlands', 'Mists');
 
 CREATE TABLE cities
 (
